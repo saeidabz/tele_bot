@@ -1,9 +1,10 @@
 import os
 
 import telebot
+from dotenv import load_dotenv
 
-BOT_TOKEN = os.environ.get('BOT_TOKEN')
-
+load_dotenv()
+BOT_TOKEN = os.getenv('BOT_TOKEN')
 bot = telebot.TeleBot(BOT_TOKEN)
 
 @bot.message_handler(commands=['start', 'hello'])
